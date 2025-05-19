@@ -11,6 +11,8 @@ export const baseApi = createApi({
       return headers;
     },
   }),
+  refetchOnFocus: true,
+  refetchOnReconnect: true,
   tagTypes: ["User", "Post", "Item"], // common tags here
   endpoints: () => ({}), // start with empty endpoints
 });

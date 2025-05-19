@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import PostForm from "./components/form";
 import { useDeletePostMutation, useGetPostsQuery } from "./redux/features/post/postEndpoints";
+import CounterComponent from "./components/counter";
 
 function App() {
   const { data, isError, error, isLoading, isSuccess, refetch } = useGetPostsQuery({ page: 1, limit: 15 });
@@ -25,6 +26,8 @@ function App() {
       <button onClick={handleDelete}>delete</button>
 
       <PostForm />
+
+      <CounterComponent />
     </>
   );
 }

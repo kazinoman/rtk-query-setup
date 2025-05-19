@@ -5,6 +5,7 @@ export const postsApi = baseApi.injectEndpoints({
     getPosts: build.query({
       query: ({ page = 1, limit = 10 }) => ({
         url: `/posts?_start=${page}&_limit=${limit}`,
+        method: "GET",
       }),
 
       providesTags: (result) => [{ type: "Post", id: "LIST" }],
